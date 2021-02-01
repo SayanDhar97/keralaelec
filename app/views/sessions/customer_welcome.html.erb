@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "/stylesheets/customer.css" %>
+<body background="/wallpaper.png">
+<% if customer_logged_in? %>
+    <h3>Welcome <%= current_customer.customer_name %></h3>
+    <div class="buttonTo"><%= button_to 'Logout', logout_path, method: :get%></div>
+    <h2 style=text-align:center;><u>Bill Information</u></h2>
+    <table class="tb">
+    <tr>
+    <th>Year</th>
+    <th>Month</th>
+    <th>Amount</th>
+    <th>Status</th>
+    </tr>
+    <% @customer.bills.each do |bill| %>
+    <tr>
+      <td><%= bill.year %></td>
+      <td><%= bill.month %></td>
+      <td><%= bill.amount %></td>
+      <td><%= bill.status%></td>
+    </tr>
+    <%end%>
+    </table>
+<%end%>
+

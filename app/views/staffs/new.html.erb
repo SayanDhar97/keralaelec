@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag "/stylesheets/form.css" %>
+<body background="/wallpaper.png">
+<h3>Staff Registration</h3>
+<%= form_for @staff do |f|%>
+  <% if @staff.errors.any? %>
+    <div id="error_explanation">
+    <div class="err">
+          <%= pluralize(@staff.errors.count, "error") %> </div>
+       occured during this sign-up:
+    <h4>
+      <ul>
+        <% @staff.errors.full_messages.each do |msg| %>
+          <h5><li><%= msg %></li><h5>
+        <% end %>
+      </ul>
+    </h4>
+    </div>
+  <% end %>
+
+  <div class="register">
+  <%= f.label :staff_name%>
+  <%= f.text_field :staff_name%>
+  <%= f.label :password%>
+  <%= f.password_field :password%>
+  <%= f.label :password_confirmation%>
+  <%= f.password_field :password_confirmation%>
+  <%= f.label :email_id%>
+  <%= f.text_field :email_id%>
+  <%= f.label :address%>
+  <%= f.text_field :address%>
+  <%= f.submit %>
+  </div>
+<%end%>
+</body>

@@ -11,7 +11,7 @@ Ubuntu 20.04.1 LTS
 ## Steps required  
 
 ### Configuration steps:  
-1.git clone https://github.com/sandra-vs-nair/electricity-board-website.git electricity\_board/  
+1.git clone https://github.com/SayanDhar97/Electricity_Website.git electricity\_board/  
 2.cd electricity\_board  
 3.rails db:create  
 

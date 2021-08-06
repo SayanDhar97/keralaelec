@@ -31,12 +31,12 @@ Ubuntu 20.04.1 LTS
 5.rails generate model Bill year:string month:string amount:float status:string staff\_name:string staff\_email:string customer:references  
 6.rails db:migrate  
 
-### Crontab (Normal installation steps. Only step 2 is needed in your PC since I have completed all other steps.):  
+### Crontab (Normal installation steps. Only step 2 is needed):  
 1.Include this line in Gem file: gem 'whenever', require: false  
 2.Use command "bundle"  
 3.Use command "bundle exec wheneverize . " to create schedule.rb  
 
-### Enable email scheduling task with crontab (I have completed step one.):  
+### Enable email scheduling task with crontab:  
 1.Add required lines in schedule.rb  
 2.Use command "bundle exec whenever --update-crontab --set environment='development'" to update crontab with instructions in schedule.rb  
 3.Use command "sudo service cron restart" to restart cron server  
